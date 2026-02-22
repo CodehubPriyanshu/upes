@@ -1,0 +1,315 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPES | Placements · Training · Recruiters</title>
+  <!-- Font Awesome 6 (free) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HERO SECTION (full viewport height) -->
+  <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-grid">
+      <!-- LEFT SIDE (main content) -->
+      <div class="hero-left">
+        <span class="top-tag">Admissions Open for 2026</span>
+        <h1>Shape Your Future at <span class="text-cyan">UPES</span></h1>
+        <div class="programs-row">
+          <span class="program-highlight">B.Tech | BBA | MBA | LLB |</span>
+          <span class="program-highlight second-line">Engineering, Management & Law Programs</span>
+        </div>
+
+        <!-- LAST DATE CARD -->
+        <div class="last-date-card">
+          <div class="last-date-inner">
+            <span class="small-label">LAST DATE</span>
+            <span class="big-date">26th February <br>2026</span>
+          </div>
+        </div>
+
+        <!-- PLACEMENT HIGHLIGHT CARDS (two side by side) -->
+        <div class="placement-highlights">
+          <div class="stat-card">
+            <div class="stat-number">92%</div>
+            <div class="stat-label">Placement Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">52 LPA</div>
+            <div class="stat-label">Highest Package</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE ADMISSION FORM CARD (height-adjusted) -->
+      <div class="hero-right">
+        <div class="form-card">
+          <h3>Admissions Open for 2026 Batch</h3>
+          <p class="form-sub">Begin your journey towards excellence</p>
+          <form id="heroForm" novalidate>
+            <div class="input-icon">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Full Name" id="fullname" required>
+            </div>
+            <div class="input-icon">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email Address" id="email" required>
+            </div>
+            <div class="input-icon">
+              <i class="fas fa-phone-alt"></i>
+              <input type="tel" placeholder="Mobile Number" id="mobile" required pattern="[0-9]{10}">
+            </div>
+            <div class="input-icon">
+              <i class="fas fa-map-marker-alt"></i>
+              <select id="state" required>
+                <option value="">Select State</option>
+                <option>Uttarakhand</option>
+                <option>Delhi NCR</option>
+                <option>Maharashtra</option>
+              </select>
+            </div>
+            <div class="input-icon">
+              <i class="fas fa-city"></i>
+              <select id="city" required>
+                <option value="">Select City</option>
+                <option>Dehradun</option>
+                <option>Noida</option>
+                <option>Mumbai</option>
+              </select>
+            </div>
+            <div class="input-icon">
+              <i class="fas fa-graduation-cap"></i>
+              <select id="course" required>
+                <option value="">Select Course</option>
+                <option>B.Tech</option>
+                <option>MBA</option>
+                <option>BBA</option>
+                <option>LLB</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary btn-block">Apply Now <i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: OVERVIEW (white rounded card) -->
+  <section class="section overview-section">
+    <div class="container">
+      <div class="overview-grid reveal">
+        <div class="overview-left">
+          <div class="student-badge-group">
+            <div class="circular-stack">
+              <div class="student-circle" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');">
+                <span class="company-badge"><i class="fas fa-building"></i></span>
+              </div>
+              <div class="student-circle" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');">
+                <span class="company-badge"><i class="fas fa-chart-line"></i></span>
+              </div>
+              <div class="student-circle" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');">
+                <span class="company-badge"><i class="fas fa-laptop-code"></i></span>
+              </div>
+              <div class="student-circle" style="background-image: url('https://randomuser.me/api/portraits/men/75.jpg');">
+                <span class="company-badge"><i class="fas fa-balance-scale"></i></span>
+              </div>
+            </div>
+            <div class="placement-icon-row">
+              <i class="fas fa-briefcase"></i> <span>250+ dream offers</span>
+            </div>
+          </div>
+        </div>
+        <div class="overview-right">
+          <p>The university boasts of a robust and efficient career services department. Its partnership with industries ensures that the students have adequate exposure and quickly get absorbed into professional roles on completion of their studies. UPES focuses on developing a world-class pool of young and talented professionals who are equipped to hit the ground running in their respective fields.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PLACEMENTS & RECRUITERS (stats navy background) -->
+  <section class="section stats-navy">
+    <div class="container stats-grid">
+      <div class="stat-item"><span class="stat-number-lg" data-target="2444">0</span> <span class="stat-label-lg">Overall Students placed in 2024-25*</span></div>
+      <div class="stat-item"><span class="stat-number-lg" data-target="52">0</span> <span class="stat-label-lg">LPA <br>Highest CTC in 2024-25</span></div>
+      <div class="stat-item"><span class="stat-number-lg" data-target="92">0</span> <span class="stat-label-lg">% <br>Placements in 2024-25*</span></div>
+      <div class="stat-item"><span class="stat-number-lg" data-target="800">0</span> <span class="stat-label-lg">+ <br>Recruiters on Campus in 2024-25</span></div>
+    </div>
+  </section>
+
+  <!-- Ongoing placement highlights (detailed schools from UPES) -->
+  <section class="section school-highlights">
+    <div class="container">
+      <h2 class="section-heading">Ongoing Placement Highlights 2024-25</h2>
+      <div class="school-grid">
+        <div class="school-card"><h4>School of Advanced Engineering</h4><div class="school-stat"><span>58 LPA</span> Highest CTC</div><div class="school-stat"><span>22 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Advanced Engineering - B.Tech.</h4><div class="school-stat"><span>55 LPA</span> Highest CTC</div><div class="school-stat"><span>21 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Computer Science</h4><div class="school-stat"><span>62 LPA</span> Highest CTC</div><div class="school-stat"><span>28 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Computer Science - B.Tech.</h4><div class="school-stat"><span>60 LPA</span> Highest CTC</div><div class="school-stat"><span>26 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Business</h4><div class="school-stat"><span>35 LPA</span> Highest CTC</div><div class="school-stat"><span>18 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Business - MBA</h4><div class="school-stat"><span>32 LPA</span> Highest CTC</div><div class="school-stat"><span>17 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Business - BBA</h4><div class="school-stat"><span>28 LPA</span> Highest CTC</div><div class="school-stat"><span>15 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Design</h4><div class="school-stat"><span>24 LPA</span> Highest CTC</div><div class="school-stat"><span>12 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Law</h4><div class="school-stat"><span>32 LPA</span> Highest CTC</div><div class="school-stat"><span>16 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Health Sciences</h4><div class="school-stat"><span>18 LPA</span> Highest CTC</div><div class="school-stat"><span>10 LPA</span> Top 10% Avg</div></div>
+        <div class="school-card"><h4>School of Liberal Studies</h4><div class="school-stat"><span>16 LPA</span> Highest CTC</div><div class="school-stat"><span>9 LPA</span> Top 10% Avg</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Placement Across Schools (dropdown section) -->
+  <!-- <section class="section across-schools">
+    <div class="container">
+      <h2>Placement Across Schools</h2>
+      <div class="school-selector">
+        <select class="school-dropdown">
+          <option>School of Advanced Engineering</option>
+          <option>School of Computer Science</option>
+          <option>School of Business</option>
+          <option>School of Law</option>
+        </select>
+        <p class="school-desc">The UPES School of Advanced Engineering (SoAE) is dedicated to nurturing future engineers with a strong foundation in theoretical knowledge and the ability to apply it to address local and global challenges. Through advanced curriculum, academic collaborations, and industry partnerships, SoAE equips students with industry-specific knowledge and concepts that are relevant to the future of engineering.</p>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Our Figures 2023-24 (additional stats) -->
+  <section class="section figures">
+    <div class="container figures-grid">
+      <div class="figures-item"><span class="fig-number" data-target="2100">0</span><span>+ Students Placed*</span><span class="small-note">2023-24</span></div>
+      <div class="figures-item"><span class="fig-number" data-target="52">0</span><span>LPA Highest CTC</span></div>
+      <div class="figures-item"><span class="fig-number" data-target="24">0</span><span>LPA Top 10% Avg</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: RECRUITERS (sliding logos) -->
+  <section class="section recruiters-slider-section">
+    <div class="container">
+      <h2 class="section-heading">Our Top Recruiters</h2>
+      <div class="slider-container">
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide-logos"><i class="fab fa-microsoft"></i><span>Microsoft</span></div>
+          <div class="slide-logos"><i class="fab fa-google"></i><span>Google</span></div>
+          <div class="slide-logos"><i class="fab fa-amazon"></i><span>Amazon</span></div>
+          <div class="slide-logos"><i class="fas fa-building"></i><span>Deloitte</span></div>
+          <div class="slide-logos"><i class="fas fa-chart-pie"></i><span>PwC</span></div>
+          <div class="slide-logos"><i class="fas fa-bolt"></i><span>Schneider</span></div>
+          <div class="slide-logos"><i class="fas fa-car"></i><span>Tata Motors</span></div>
+          <div class="slide-logos"><i class="fas fa-flask"></i><span>Bayer</span></div>
+          <div class="slide-logos"><i class="fab fa-apple"></i><span>Apple</span></div>
+          <div class="slide-logos"><i class="fas fa-cogs"></i><span>Siemens</span></div>
+          <div class="slide-logos"><i class="fas fa-chart-line"></i><span>Goldman</span></div>
+          <div class="slide-logos"><i class="fas fa-gavel"></i><span>Khaitan</span></div>
+          <div class="slide-logos"><i class="fas fa-hotel"></i><span>Marriott</span></div>
+          <div class="slide-logos"><i class="fas fa-dna"></i><span>Biocon</span></div>
+          <div class="slide-logos"><i class="fas fa-code"></i><span>Adobe</span></div>
+          <div class="slide-logos"><i class="fas fa-university"></i><span>HDFC</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: SUMMER INTERNSHIPS -->
+  <section class="section intern-section">
+    <div class="container two-col">
+      <div class="col-image reveal"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" alt="interns"></div>
+      <div class="col-text"><h2>Summer Internships</h2><p>Summer Internships are mandatory for all graduate and post-graduate students. The duration of the summer internships can vary between eight weeks to six months. Career Services Department and faculty members from respective domains play an important role in ensuring all students get an opportunity to experience corporate life and culture through these internships.</p></div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: TRAINING AND PREPARATION (EDGE) -->
+  <section class="section training-section">
+    <div class="container two-col reverse">
+      <div class="col-text"><h2>Training and preparation</h2><p class="strong">UPES believes in imparting skills that are high in demand and extremely important for a successful career. These soft skills will set you apart from the rest.</p><p>EDGE, a platform for limitless possibilities, is an acronym for Enhanced Development Growth and Enrichment program. EDGE supports students in their chosen field with a focus on key action areas, such as Entrepreneurship, Exam Pathways, and Employability. This exposes students to a wide array of activities that help them prepare for various competitive exams and excel professionally.</p></div>
+      <div class="col-image reveal"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600" alt="training"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: PLACEMENT PROCESS (circular steps) -->
+  <section class="section process-section">
+    <div class="container">
+      <h2>Placement process</h2>
+      <p class="process-sub">Through insightful workshops, seminars and training programs, EDGE prepares students to face professional challenges; it nurtures students with comprehensive training. Additionally, EDGE gives students aptitude and comprehensive training, access to T.I.M.E center on campus, pre-post training assessment, pre-internship training, life skills training, graduate career guidance, thinking skills, communication workshops, resume workshops, LinkedIn profile workshops, personal branding and pitching workshop, tech talks, mock interviews, employability boot camp, industry mentoring by alumni, counselling for competitive exams, E-cell for aspiring entrepreneurs and soft skills training.</p>
+      <div class="steps-horizontal">
+        <div class="step-circle">1<br>Registration</div>
+        <div class="step-circle">2<br>Aptitude</div>
+        <div class="step-circle">3<br>GD</div>
+        <div class="step-circle">4<br>Tech</div>
+        <div class="step-circle">5<br>HR</div>
+        <div class="step-circle">6<br>Offer</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: PLACEMENT STORIES (video cards) -->
+  <section class="section stories-section">
+    <div class="container">
+      <h2>Placement Stories</h2>
+      <div class="stories-grid">
+        <div class="story-card"><div class="video-preview" style="background:#1b2b4a;"><i class="fas fa-play-circle"></i></div><h4>Medha Mathur</h4><p>Bain & Company</p><small>From Dental Surgery to Business Analytics</small></div>
+        <div class="story-card"><div class="video-preview" style="background:#1b2b4a;"><i class="fas fa-play-circle"></i></div><h4>Rohan Mehta</h4><p>Google</p><small>Product Manager, 62 LPA</small></div>
+        <div class="story-card"><div class="video-preview" style="background:#1b2b4a;"><i class="fas fa-play-circle"></i></div><h4>Shreya Kapoor</h4><p>Microsoft</p><small>Software Engineer</small></div>
+        <div class="story-card"><div class="video-preview" style="background:#1b2b4a;"><i class="fas fa-play-circle"></i></div><h4>Arjun Singh</h4><p>Amazon</p><small>Cloud Architect</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: TESTIMONIALS (slider only, no YouTube) -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <h2>Student Testimonials</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/men/1.jpg" alt=""><strong>Ayush Patel</strong> <span>B.Tech CSE</span><p>“UPES placement cell transformed my career. I got placed at Microsoft with 52 LPA.”</p></div>
+        <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/2.jpg" alt=""><strong>Neha Sharma</strong> <span>MBA</span><p>“Dream company, amazing support. The training sessions were incredibly helpful.”</p></div>
+        <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""><strong>Rahul Verma</strong> <span>LLB</span><p>“The mock interviews and mentorship from alumni made all the difference.”</p></div>
+        <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/4.jpg" alt=""><strong>Priya Nair</strong> <span>BBA</span><p>“Secured a dream internship at Deloitte thanks to EDGE program.”</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY MOBILE BUTTONS -->
+  <div class="mobile-sticky-buttons">
+    <button class="sticky-btn navy" id="placementDetailsBtn">Placement Details</button>
+    <button class="sticky-btn cyan" id="downloadBrochureBtn">Download Brochure</button>
+  </div>
+
+  <!-- MODAL POPUP (same form as hero) -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="form-card">
+        <h3>Download Brochure / Placement Details</h3>
+        <form id="modalForm">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="tel" placeholder="Mobile" required pattern="[0-9]{10}">
+          <select required><option>Select State</option></select>
+          <select required><option>Select City</option></select>
+          <select required><option>Select Course</option></select>
+          <button type="submit" class="btn-primary btn-block">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-left">
+        <img src="https://via.placeholder.com/120x40/0b1f3f/ffffff?text=UPES" alt="UPES logo">
+        <p>University of Petroleum and Energy Studies</p>
+        <p>Dehradun · Bangalore · Noida</p>
+      </div>
+      <div class="footer-right">
+        <div class="map-card">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13752.47530472497!2d78.0!3d30.0" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
