@@ -108,8 +108,10 @@
       const maxIndex = slideCount - visibleSlides;
       if (currentIndex > maxIndex) currentIndex = maxIndex;
       if (currentIndex < 0) currentIndex = 0;
-      const translateX = -(currentIndex * (100 / visibleSlides));
-      wrapper.style.transform = `translateX(${translateX}%)`;
+      const step = slides.length > 1
+        ? (slides[1].offsetLeft - slides[0].offsetLeft)
+        : slides[0].getBoundingClientRect().width;
+      wrapper.style.transform = `translateX(-${currentIndex * step}px)`;
       Array.from(dots).forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
       });
@@ -177,12 +179,172 @@
     updateSlider();
   };
 
+  // ---------- PLACEMENT STORIES CAROUSEL ----------
+  const initStoriesCarousel = () => {
+    const carousel = document.getElementById('storiesCarousel');
+    if (!carousel || carousel.dataset.inited === 'true') return;
+
+    const track = carousel.querySelector('.stories-track');
+    const viewport = carousel.querySelector('.stories-viewport');
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    const cards = track ? Array.from(track.children) : [];
+
+    if (!track || !viewport || cards.length === 0) return;
+
+    let currentIndex = 0;
+    let autoSlideId = null;
+    let touchStartX = 0;
+    let visibleSlides = 1;
+    let maxIndex = 0;
+
+    const getVisibleSlides = () => {
+      if (window.innerWidth <= 640) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    };
+
+    const update = () => {
+      visibleSlides = getVisibleSlides();
+      maxIndex = Math.max(cards.length - visibleSlides, 0);
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      if (currentIndex < 0) currentIndex = 0;
+      const step = cards.length > 1
+        ? (cards[1].offsetLeft - cards[0].offsetLeft)
+        : cards[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentIndex * step}px)`;
+    };
+
+    const goNext = () => {
+      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      update();
+    };
+
+    const goPrev = () => {
+      currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+      update();
+    };
+
+    const startAuto = () => {
+      autoSlideId = setInterval(goNext, 4500);
+    };
+
+    const stopAuto = () => {
+      if (autoSlideId) clearInterval(autoSlideId);
+      autoSlideId = null;
+    };
+
+    if (nextBtn) nextBtn.addEventListener('click', goNext);
+    if (prevBtn) prevBtn.addEventListener('click', goPrev);
+
+    viewport.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    viewport.addEventListener('touchend', (e) => {
+      const diff = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(diff) < 40) return;
+      if (diff < 0) goNext();
+      if (diff > 0) goPrev();
+    });
+
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+    window.addEventListener('resize', debounce(update, 180));
+
+    update();
+    startAuto();
+    carousel.dataset.inited = 'true';
+  };
+
+  // ---------- MOBILE SCHOOL HIGHLIGHTS CAROUSEL ----------
+  const schoolCarouselState = {
+    initialized: false,
+    autoSlideId: null,
+    currentIndex: 0,
+    touchStartX: 0,
+    touchStartHandler: null,
+    touchEndHandler: null
+  };
+
+  const setupSchoolHighlightsCarousel = () => {
+    const grid = document.querySelector('.school-grid');
+    if (!grid) return;
+
+    const cards = Array.from(grid.querySelectorAll('.school-card'));
+    const mobileView = window.innerWidth <= 640;
+
+    const stopAuto = () => {
+      if (schoolCarouselState.autoSlideId) clearInterval(schoolCarouselState.autoSlideId);
+      schoolCarouselState.autoSlideId = null;
+    };
+
+    if (!mobileView) {
+      stopAuto();
+      if (schoolCarouselState.initialized) {
+        if (schoolCarouselState.touchStartHandler) grid.removeEventListener('touchstart', schoolCarouselState.touchStartHandler);
+        if (schoolCarouselState.touchEndHandler) grid.removeEventListener('touchend', schoolCarouselState.touchEndHandler);
+      }
+      schoolCarouselState.initialized = false;
+      schoolCarouselState.currentIndex = 0;
+      grid.classList.remove('mobile-carousel');
+      grid.style.transform = '';
+      return;
+    }
+
+    if (cards.length === 0) return;
+
+    const update = () => {
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(grid).gap || '0');
+      grid.style.transform = `translateX(-${schoolCarouselState.currentIndex * (cardWidth + gap)}px)`;
+    };
+
+    const goNext = () => {
+      schoolCarouselState.currentIndex = (schoolCarouselState.currentIndex + 1) % cards.length;
+      update();
+    };
+
+    const goPrev = () => {
+      schoolCarouselState.currentIndex = (schoolCarouselState.currentIndex - 1 + cards.length) % cards.length;
+      update();
+    };
+
+    if (!schoolCarouselState.initialized) {
+      grid.classList.add('mobile-carousel');
+      schoolCarouselState.touchStartHandler = (e) => {
+        schoolCarouselState.touchStartX = e.changedTouches[0].screenX;
+      };
+      schoolCarouselState.touchEndHandler = (e) => {
+        const diff = e.changedTouches[0].screenX - schoolCarouselState.touchStartX;
+        if (Math.abs(diff) < 35) return;
+        if (diff < 0) goNext();
+        if (diff > 0) goPrev();
+      };
+      grid.addEventListener('touchstart', schoolCarouselState.touchStartHandler);
+      grid.addEventListener('touchend', schoolCarouselState.touchEndHandler);
+      schoolCarouselState.initialized = true;
+    }
+
+    stopAuto();
+    schoolCarouselState.autoSlideId = setInterval(goNext, 3200);
+    update();
+  };
+
   // Initialize slider after DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTestimonialSlider);
+    document.addEventListener('DOMContentLoaded', () => {
+      initTestimonialSlider();
+      initStoriesCarousel();
+      setupSchoolHighlightsCarousel();
+    });
   } else {
     initTestimonialSlider();
+    initStoriesCarousel();
+    setupSchoolHighlightsCarousel();
   }
+
+  window.addEventListener('resize', debounce(setupSchoolHighlightsCarousel, 180));
 
   // ---------- MODAL ----------
   const modal = document.getElementById('modal');

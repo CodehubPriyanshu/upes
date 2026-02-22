@@ -123,6 +123,7 @@
           </div>
         </div>
         <div class="overview-right">
+          <h2 class="overview-title">Overview</h2>
           <p>The university boasts of a robust and efficient career services department. Its partnership with industries ensures that the students have adequate exposure and quickly get absorbed into professional roles on completion of their studies. UPES focuses on developing a world-class pool of young and talented professionals who are equipped to hit the ground running in their respective fields.</p>
         </div>
       </div>
@@ -176,13 +177,13 @@
   </section> -->
 
   <!-- Our Figures 2023-24 (additional stats) -->
-  <section class="section figures">
+  <!-- <section class="section figures">
     <div class="container figures-grid">
       <div class="figures-item"><span class="fig-number" data-target="2100">0</span><span>+ Students Placed*</span><span class="small-note">2023-24</span></div>
       <div class="figures-item"><span class="fig-number" data-target="52">0</span><span>LPA Highest CTC</span></div>
       <div class="figures-item"><span class="fig-number" data-target="24">0</span><span>LPA Top 10% Avg</span></div>
     </div>
-  </section>
+  </section> -->
 
   <!-- SECTION 4: RECRUITERS (sliding logos) -->
   <section class="section recruiters-slider-section">
@@ -227,18 +228,18 @@
     </div>
   </section>
 
-  <!-- SECTION 7: PLACEMENT PROCESS (circular steps) -->
+  <!-- SECTION 7: PLACEMENT PROCESS -->
   <section class="section process-section">
     <div class="container">
-      <h2>Placement process</h2>
+      <h2>Placement Process</h2>
       <p class="process-sub">Through insightful workshops, seminars and training programs, EDGE prepares students to face professional challenges; it nurtures students with comprehensive training. Additionally, EDGE gives students aptitude and comprehensive training, access to T.I.M.E center on campus, pre-post training assessment, pre-internship training, life skills training, graduate career guidance, thinking skills, communication workshops, resume workshops, LinkedIn profile workshops, personal branding and pitching workshop, tech talks, mock interviews, employability boot camp, industry mentoring by alumni, counselling for competitive exams, E-cell for aspiring entrepreneurs and soft skills training.</p>
-      <div class="steps-horizontal">
-        <div class="step-circle">1<br>Registration</div>
-        <div class="step-circle">2<br>Aptitude</div>
-        <div class="step-circle">3<br>GD</div>
-        <div class="step-circle">4<br>Tech</div>
-        <div class="step-circle">5<br>HR</div>
-        <div class="step-circle">6<br>Offer</div>
+      <div class="process-steps-vertical">
+        <div class="process-step-card"><span class="step-number">1</span><h4>Registration</h4><img src="assets/location/registration.png" alt="Registration step"></div>
+        <div class="process-step-card"><span class="step-number">2</span><h4>Aptitude</h4><img src="assets/location/aptitude.png" alt="Aptitude step"></div>
+        <div class="process-step-card"><span class="step-number">3</span><h4>GD</h4><img src="assets/location/gd.png" alt="GD step"></div>
+        <div class="process-step-card"><span class="step-number">4</span><h4>Tech</h4><img src="assets/location/tech.png" alt="Technical step"></div>
+        <div class="process-step-card"><span class="step-number">5</span><h4>HR</h4><img src="assets/location/hr.png" alt="HR step"></div>
+        <div class="process-step-card"><span class="step-number">6</span><h4>Offer</h4><img src="assets/location/offer.png" alt="Offer step"></div>
       </div>
     </div>
   </section>
@@ -247,11 +248,18 @@
   <section class="section stories-section">
     <div class="container">
       <h2>Placement Stories</h2>
-      <div class="stories-grid">
-        <div class="story-card"><div class="video-preview" style="background:#1b2b4a;"><i class="fas fa-play-circle"></i></div><h4>Medha Mathur</h4><p>Bain & Company</p><small>From Dental Surgery to Business Analytics</small></div>
-        <div class="story-card"><div class="video-preview" style="background:#1b2b4a;"><i class="fas fa-play-circle"></i></div><h4>Rohan Mehta</h4><p>Google</p><small>Product Manager, 62 LPA</small></div>
-        <div class="story-card"><div class="video-preview" style="background:#1b2b4a;"><i class="fas fa-play-circle"></i></div><h4>Shreya Kapoor</h4><p>Microsoft</p><small>Software Engineer</small></div>
-        <div class="story-card"><div class="video-preview" style="background:#1b2b4a;"><i class="fas fa-play-circle"></i></div><h4>Arjun Singh</h4><p>Amazon</p><small>Cloud Architect</small></div>
+      <div class="stories-carousel" id="storiesCarousel">
+        <button class="carousel-btn prev" aria-label="Previous story">&#10094;</button>
+        <div class="stories-viewport">
+          <div class="stories-track">
+            <div class="story-card"><video class="story-video" controls preload="metadata" playsinline src="assets/video/1.mp4"></video><h4>Medha Mathur</h4><p>Bain & Company</p><small>From Dental Surgery to Business Analytics</small></div>
+            <div class="story-card"><video class="story-video" controls preload="metadata" playsinline src="assets/video/2.mp4"></video><h4>Rohan Mehta</h4><p>Google</p><small>Product Manager, 62 LPA</small></div>
+            <div class="story-card"><video class="story-video" controls preload="metadata" playsinline src="assets/video/3.mp4"></video><h4>Shreya Kapoor</h4><p>Microsoft</p><small>Software Engineer</small></div>
+            <div class="story-card"><video class="story-video" controls preload="metadata" playsinline src="assets/video/4.mp4"></video><h4>Arjun Singh</h4><p>Amazon</p><small>Cloud Architect</small></div>
+            <div class="story-card"><video class="story-video" controls preload="metadata" playsinline src="assets/video/5.mp4"></video><h4>Kavya Joshi</h4><p>Deloitte</p><small>Consulting Analyst</small></div>
+          </div>
+        </div>
+        <button class="carousel-btn next" aria-label="Next story">&#10095;</button>
       </div>
     </div>
   </section>
@@ -261,10 +269,11 @@
     <div class="container">
       <h2>Student Testimonials</h2>
       <div class="testimonial-slider">
-        <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/men/1.jpg" alt=""><strong>Ayush Patel</strong> <span>B.Tech CSE</span><p>“UPES placement cell transformed my career. I got placed at Microsoft with 52 LPA.”</p></div>
-        <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/2.jpg" alt=""><strong>Neha Sharma</strong> <span>MBA</span><p>“Dream company, amazing support. The training sessions were incredibly helpful.”</p></div>
-        <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""><strong>Rahul Verma</strong> <span>LLB</span><p>“The mock interviews and mentorship from alumni made all the difference.”</p></div>
-        <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/4.jpg" alt=""><strong>Priya Nair</strong> <span>BBA</span><p>“Secured a dream internship at Deloitte thanks to EDGE program.”</p></div>
+        <div class="testimonial-card"><img src="assets/testimonials/1.jpg" alt="Ayush Patel"><strong>Ayush Patel</strong> <span>B.Tech CSE</span><p>UPES placement cell transformed my career. I got placed at Microsoft with 52 LPA.</p></div>
+        <div class="testimonial-card"><img src="assets/testimonials/2.jpg" alt="Neha Sharma"><strong>Neha Sharma</strong> <span>MBA</span><p>Dream company, amazing support. The training sessions were incredibly helpful.</p></div>
+        <div class="testimonial-card"><img src="assets/testimonials/3.jpg" alt="Rahul Verma"><strong>Rahul Verma</strong> <span>LLB</span><p>The mock interviews and mentorship from alumni made all the difference.</p></div>
+        <div class="testimonial-card"><img src="assets/testimonials/4.jpg" alt="Priya Nair"><strong>Priya Nair</strong> <span>BBA</span><p>Secured a dream internship at Deloitte thanks to EDGE program.</p></div>
+        <div class="testimonial-card"><img src="assets/testimonials/5.jpg" alt="Ananya Desai"><strong>Ananya Desai</strong> <span>BBA</span><p>Career mentoring and interview prep helped me secure my final placement confidently.</p></div>
       </div>
     </div>
   </section>
@@ -304,6 +313,8 @@
       </div>
       <div class="footer-right">
         <div class="map-card">
+          <h3>Campus Location</h3>
+          <a class="map-link-btn" href="https://search.brave.com/search?q=UPES+Dehradun+Campus&source=web&view=full&map_src=i&loc_id=loc43O52XQ3WNI7EAZBAZ4XN67KTIBP2QFP7AAAAAAA%3D&bbox=77.442%2C30.199%2C78.491%2C30.632&summary=1&conversation=08c4d909ddef8c93cce0eabc10d1b434d310" target="_blank" rel="noopener noreferrer">Open UPES Dehradun Campus Map</a>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13752.47530472497!2d78.0!3d30.0" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
