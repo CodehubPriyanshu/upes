@@ -289,15 +289,50 @@
     <div class="modal-content">
       <span class="close-btn">&times;</span>
       <div class="form-card">
-        <h3>Download Brochure / Placement Details</h3>
+        <h3 id="modalHeading">Admissions Open for 2026 Batch</h3>
+        <p class="form-sub" id="modalSub">Begin your journey towards excellence</p>
         <form id="modalForm">
-          <input type="text" placeholder="Full Name" required>
-          <input type="email" placeholder="Email" required>
-          <input type="tel" placeholder="Mobile" required pattern="[0-9]{10}">
-          <select required><option>Select State</option></select>
-          <select required><option>Select City</option></select>
-          <select required><option>Select Course</option></select>
-          <button type="submit" class="btn-primary btn-block">Submit</button>
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Full Name" required>
+          </div>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="input-icon">
+            <i class="fas fa-phone-alt"></i>
+            <input type="tel" placeholder="Mobile Number" required pattern="[0-9]{10}">
+          </div>
+          <div class="input-icon">
+            <i class="fas fa-map-marker-alt"></i>
+            <select required>
+              <option value="">Select State</option>
+              <option>Uttarakhand</option>
+              <option>Delhi NCR</option>
+              <option>Maharashtra</option>
+            </select>
+          </div>
+          <div class="input-icon">
+            <i class="fas fa-city"></i>
+            <select required>
+              <option value="">Select City</option>
+              <option>Dehradun</option>
+              <option>Noida</option>
+              <option>Mumbai</option>
+            </select>
+          </div>
+          <div class="input-icon">
+            <i class="fas fa-graduation-cap"></i>
+            <select required>
+              <option value="">Select Course</option>
+              <option>B.Tech</option>
+              <option>MBA</option>
+              <option>BBA</option>
+              <option>LLB</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary btn-block">Apply Now <i class="fas fa-arrow-right"></i></button>
         </form>
       </div>
     </div>
@@ -314,7 +349,6 @@
       <div class="footer-right">
         <div class="map-card">
           <h3>Campus Location</h3>
-          <a class="map-link-btn" href="https://search.brave.com/search?q=UPES+Dehradun+Campus&source=web&view=full&map_src=i&loc_id=loc43O52XQ3WNI7EAZBAZ4XN67KTIBP2QFP7AAAAAAA%3D&bbox=77.442%2C30.199%2C78.491%2C30.632&summary=1&conversation=08c4d909ddef8c93cce0eabc10d1b434d310" target="_blank" rel="noopener noreferrer">Open UPES Dehradun Campus Map</a>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13752.47530472497!2d78.0!3d30.0" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>

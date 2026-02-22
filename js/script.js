@@ -351,9 +351,23 @@
   const closeBtn = document.querySelector('.close-btn');
   const placementBtn = document.getElementById('placementDetailsBtn');
   const brochureBtn = document.getElementById('downloadBrochureBtn');
+  const modalHeading = document.getElementById('modalHeading');
+  const modalSub = document.getElementById('modalSub');
 
-  function openModal() {
+  function openModal(type) {
     if (!modal) return;
+    if (modalHeading) {
+      if (type === 'placement') {
+        modalHeading.textContent = 'Placement Details - Admissions Open for 2026 Batch';
+      } else if (type === 'brochure') {
+        modalHeading.textContent = 'Download Brochure - Admissions Open for 2026 Batch';
+      } else {
+        modalHeading.textContent = 'Admissions Open for 2026 Batch';
+      }
+    }
+    if (modalSub) {
+      modalSub.textContent = 'Begin your journey towards excellence';
+    }
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -364,8 +378,8 @@
     document.body.style.overflow = '';
   }
 
-  if (placementBtn) placementBtn.addEventListener('click', openModal);
-  if (brochureBtn) brochureBtn.addEventListener('click', openModal);
+  if (placementBtn) placementBtn.addEventListener('click', () => openModal('placement'));
+  if (brochureBtn) brochureBtn.addEventListener('click', () => openModal('brochure'));
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
   window.addEventListener('click', (e) => {
